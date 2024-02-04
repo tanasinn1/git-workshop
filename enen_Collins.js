@@ -27,7 +27,12 @@ class enen_Collins {
 
   async findCollins(word) {
     let notes = [];
-    if (!word) return notes; // return empty notes
+    if (!word) {
+      console.error('no word given');
+      return notes; // return empty notes
+    }
+
+    const wordForUri = word.trim().replace(/\s+/g, '-');
 
     function T(node) {
       if (!node) return '';
@@ -35,7 +40,7 @@ class enen_Collins {
     }
 
     let base = 'https://www.collinsdictionary.com/us/dictionary/english/';
-    let url = base + encodeURIComponent(word);
+    let url = base + encodeURIComponent(wordForUri);
     let doc = '';
     try {
       let data = await api.fetch(url);
