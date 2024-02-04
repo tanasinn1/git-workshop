@@ -34,7 +34,7 @@ class enen_Collins {
       else return node.innerText.trim();
     }
 
-    let base = 'https://www.collinsdictionary.com/dictionary/english/';
+    let base = 'https://www.collinsdictionary.com/us/dictionary/english/';
     let url = base + encodeURIComponent(word);
     let doc = '';
     try {
@@ -45,8 +45,11 @@ class enen_Collins {
       return [];
     }
 
-    let dictionary = doc.querySelector('.dictionary.Cob_Adv_Brit');
-    if (!dictionary) return notes; // return empty notes
+    let dictionary = doc.querySelector('.dictionary.Cob_Adv_US.dictentry');
+    if (!dictionary) {
+      console.error('dictionary not found');
+      return notes; // return empty notes
+    }
 
     let expression = T(dictionary.querySelector('.h2_entry'));
     let reading = T(dictionary.querySelector('.pron'));
