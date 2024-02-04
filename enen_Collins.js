@@ -45,7 +45,7 @@ class enen_Collins {
       return [];
     }
 
-    let dictionary = doc.querySelector('.dictionary.Cob_Adv_US.dictentry');
+    let dictionary = doc.querySelector('.dictionary.Cob_Adv_US');
     if (!dictionary) {
       console.error('dictionary not found');
       return notes; // return empty notes
