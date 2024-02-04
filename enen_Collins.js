@@ -34,7 +34,7 @@ class enen_Collins {
       else return node.innerText.trim();
     }
 
-    let base = 'https://www.collinsdictionary.com/us/dictionary/english/';
+    let base = 'https://www.collinsdictionary.com/dictionary/english/';
     let url = base + encodeURIComponent(word);
     let doc = '';
     try {
