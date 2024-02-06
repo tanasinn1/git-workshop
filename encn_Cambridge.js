@@ -54,11 +54,11 @@ class encn_Cambridge {
       let reading = '';
       let readings = entry.querySelectorAll('.pron .ipa');
       if (readings) {
-        let reading_uk = T(readings[0]);
-        let reading_us = T(readings[1]);
+        let reading_us = T(readings[0]);
+        let reading_uk = T(readings[1]);
         reading =
-          reading_uk || reading_us
-            ? `UK[${reading_uk}] US[${reading_us}] `
+          reading_us || reading_uk
+            ? `US[${reading_us}] UK[${reading_uk}] `
             : '';
       }
       let pos = T(entry.querySelector('.posgram'));
