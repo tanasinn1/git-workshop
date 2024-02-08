@@ -55,7 +55,7 @@ class encn_Cambridge {
         let expression = T(entry.querySelector('.headword'));
         let reading = '';
         let readings = entry.querySelectorAll('.pron .ipa');
-        if (!Array.isArray(readings) || readings.length === 0) {
+        if (!readings?.length || readings.length === 0) {
           console.log('no readings');
         } else if (readings.length < 2) {
           console.log('not enough readings');
