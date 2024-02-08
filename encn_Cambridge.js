@@ -56,9 +56,9 @@ class encn_Cambridge {
         let reading = '';
         let readings = entry.querySelectorAll('.pron .ipa');
         if (!readings?.length || readings.length === 0) {
-          console.log('no readings');
+          console.log('no readings', readings);
         } else if (readings.length < 2) {
-          console.log('not enough readings');
+          console.log('not enough readings', readings);
         } else {
           let reading_us = T(readings[0]);
           let reading_uk = T(readings[1]);
