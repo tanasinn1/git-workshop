@@ -51,6 +51,7 @@ class encn_Cambridge {
 
     try {
       let entries = doc.querySelectorAll('.pr .entry-body__el') || [];
+      console.log('entries', entries);
       for (const entry of entries) {
         let definitions = [];
         let audios = [];
