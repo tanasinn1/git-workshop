@@ -54,8 +54,10 @@ class encn_Cambridge {
       console.log('entries', entries);
       const idioms = doc.querySelectorAll('.pr .idiom-block') || [];
       console.log('idioms', idioms);
-      const combinedArray = Array.from(entries).concat(Array.from(idioms));
-      for (const entry of combinedArray) {
+      const combinedEntriyArray = Array.from(entries).concat(
+        Array.from(idioms)
+      );
+      for (const entry of combinedEntriyArray) {
         let definitions = [];
         let audios = [];
 
@@ -88,7 +90,13 @@ class encn_Cambridge {
         //audios[1] = audios[1].replace('https', 'http');
 
         let sensbodys = entry.querySelectorAll('.sense-body') || [];
-        for (const sensbody of sensbodys) {
+        console.log('sensbodys', sensbodys);
+        const phraseDiBodies = entry.querySelectorAll('.phrase-di-body') || [];
+        console.log('phraseDiBodies', phraseDiBodies);
+        const combinedSensbodyArray = Array.from(sensbodys).concat(
+          Array.from(phraseDiBodies)
+        );
+        for (const sensbody of combinedSensbodyArray) {
           let sensblocks = sensbody.childNodes || [];
           for (const sensblock of sensblocks) {
             let phrasehead = '';
