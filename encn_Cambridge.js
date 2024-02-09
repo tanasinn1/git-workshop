@@ -54,7 +54,8 @@ class encn_Cambridge {
       console.log('entries', entries);
       const idioms = doc.querySelectorAll('.pr .idiom-block') || [];
       console.log('idioms', idioms);
-      for (const entry of entries.concat(idioms)) {
+      const combinedArray = Array.from(entries).concat(Array.from(idioms));
+      for (const entry of combinedArray) {
         let definitions = [];
         let audios = [];
 
