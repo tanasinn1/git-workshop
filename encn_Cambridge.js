@@ -52,7 +52,9 @@ class encn_Cambridge {
     try {
       let entries = doc.querySelectorAll('.pr .entry-body__el') || [];
       console.log('entries', entries);
-      for (const entry of entries) {
+      const idioms = doc.querySelectorAll('.pr .idiom-block') || [];
+      console.log('idioms', idioms);
+      for (const entry of entries.concat(idioms)) {
         let definitions = [];
         let audios = [];
 
