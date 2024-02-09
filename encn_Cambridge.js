@@ -52,7 +52,7 @@ class encn_Cambridge {
     try {
       let entries = doc.querySelectorAll('.pr .entry-body__el') || [];
       console.log('entries', entries);
-      const idioms = doc.querySelectorAll('.pr .idiom-block') || [];
+      const idioms = doc.querySelectorAll('.pr.idiom-block') || [];
       console.log('idioms', idioms);
       const combinedEntriyArray = Array.from(entries).concat(
         Array.from(idioms)
