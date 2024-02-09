@@ -27,7 +27,10 @@ class encn_Cambridge {
 
   async findCambridge(word) {
     let notes = [];
-    if (!word) return notes; // return empty notes
+    if (!word) {
+      console.log('no word');
+      return notes; // return empty notes
+    }
 
     function T(node) {
       if (!node) return '';
