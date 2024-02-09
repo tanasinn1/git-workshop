@@ -148,6 +148,7 @@ class encn_Cambridge {
           audios,
         });
       }
+      console.log('notes', notes);
       return notes;
     } catch (err) {
       console.error(err);
