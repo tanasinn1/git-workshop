@@ -41,7 +41,16 @@ class encn_Cambridge {
     let url = base + encodeURIComponent(word);
     let doc = '';
     try {
-      let data = await api.fetch(url);
+      let data = await api.fetch(
+        url,
+        {
+          credentials: "include",
+          headers: {
+            "User-Agent": navigator.userAgent,
+            "Accept": "text/html,application/json",
+          }
+        }
+      );
       let parser = new DOMParser();
       doc = parser.parseFromString(data, 'text/html');
     } catch (err) {
