@@ -37,7 +37,7 @@ class encn_Cambridge {
       else return node.innerText.trim();
     }
 
-    let base = 'https://dictionary.cambridge.org/us/search/english/direct/?q=';
+    let base = 'https://dictionary.cambridge.org/us/dictionary/english/';
     let url = base + encodeURIComponent(word);
     let doc = '';
     try {
